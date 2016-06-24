@@ -1,0 +1,29 @@
+<div class='row'>	
+	<div class='six columns'>
+		<h3>Registration</h3>
+		<hr>
+		<form action='/users' method='post'>
+			<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+			<input placeholder="First Name" type="text" name="user[first_name]"><br>
+			<input placeholder="Last Name" type="text" name="user[last_name]"><br>
+			<input placeholder="Email" type="text" name="user[email]"><br>
+			<input placeholder="Password" type="password" name="user[password]"><br>
+			<input placeholder="Confirm Password" id="Password Confirmation" type="password" name="user[password_confirmation]"><br>
+			<button type="submit"> Register </button>
+		</form>
+	</div>
+
+	<div class='six columns'>
+		<h3>Login</h3>
+		<hr>
+		<form action='/sessions' method='post'>
+			<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+			<input placeholder="Email" type="text" name="email">	
+			<br>
+			<input placeholder="Password" type="password" name="password">
+			<br>
+
+			<button type="submit" value="Log In"> Log In</button>
+		</form>
+	</div>
+</div>

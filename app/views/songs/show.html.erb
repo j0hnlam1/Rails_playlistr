@@ -1,0 +1,23 @@
+<div class='row'>
+	<div class='twelve columns'>
+		<h3>others who added <%= @song.artist %> - <%= @song.title %> </h3>
+		<table class="u-full-width">
+			<thead>
+				<tr>
+					<td>name</td>
+					<td>times added</td>
+				</tr>
+			</thead>
+			<tbody>
+				<% @users.each  do  |u| %>
+					<% if u.songs_played.include? @song %>
+					<tr>
+						<td> <a href="/users/<%= u.id %>"> <%= u.first_name %></a> </td>
+						<td> <%= u.songs_played.count %> </td>
+					</tr>
+					<% end %>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+</div>

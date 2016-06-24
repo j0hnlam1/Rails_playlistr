@@ -1,0 +1,19 @@
+<h3> <%= @user.first_name %>'s playlist </h3>
+<table class="u-full-width">
+	<thead>
+		<tr>
+			<td>artist</td>
+			<td>title</td>
+			<td>times added</td>
+		</tr>
+	</thead>
+	<tbody>
+	<% @songs.each do  |s| %>
+		<tr>
+			<td> <%= s.artist %> </td>
+			<td> <%= s.title %> </td>
+			<td> <%= s.plays.count%> </td>
+		</tr>
+	<% end %>
+	</tbody>
+</table>
